@@ -8,7 +8,7 @@ private:
     char cust_name[50];
     int cust_age;
     char cust_city[50];
-    long long cust_mobile_number;
+    char cust_mobile_number[11];
     int cust_simcard_validity;
     char cust_telecom_brand_name[25];
 
