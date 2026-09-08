@@ -44,18 +44,18 @@ public:
 
 int main()
 {
-    int n;
-    cout << "Enter Number of Records you wanna add: " << endl;
-    cin >> n;
-    Customer customers[n];
-    for (int i = 0; i < n; i++)
-    {
-        customers[i].setData();
-    }
-    cout << "Customer Details" << endl << endl;
-    for(int i = 0; i < n; i++){
-        customers[i].getData();
-        cout << endl;
-    }
+
+    Customer c1,c2,c3,c4,c5;
+    c1.setData();
+    c2.setData();
+    c3.setData();
+    c4.setData();
+    c5.setData();
+    cout << "Student Details" << endl << endl;
+    c1.getData();
+    c2.getData();
+    c3.getData();
+    c4.getData();
+    c5.getData();
     return 0;
 }
