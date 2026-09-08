@@ -19,6 +19,9 @@ public:
         strcpy(this->course,c);
         this->per = p;
     }
+    Student(){
+        cout << "Default Constructor" << endl;
+    }
     void getData(){
         cout << "Student GRID: " << grid << endl
          << "Student Name: " << name << endl
@@ -26,13 +29,16 @@ public:
          << "Student Course: " << course << endl
          << "Student Percentage: " << per << endl;
     }
+    ~Student(){
+        cout << "Code is Cleaned..!" << endl;
+    }
 };
 
 int main()
 {
   
     Student student1(101,"Usman",20,"Python",78.5);
-    Student student2();
+    Student student2;
 
     cout << "Students Details: " << endl << endl;
     student1.getData();
