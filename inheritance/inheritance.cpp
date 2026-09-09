@@ -9,6 +9,8 @@ class Animal{
     }
 
 };
-class Dog :: public Animal{
-    
-};
+    class Dog : public Animal{
+        void walking(){
+            cout << "It is Walking" << endl;
+        }
+    };
