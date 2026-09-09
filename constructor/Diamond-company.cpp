@@ -38,6 +38,9 @@ public:
              << "Compnay Exports Diamond: " << comp_export_diamonds << endl
              << "Company CEO Name: " << comp_ceo << endl;
     }
+    ~DiamondCompany(){
+        cout << "Memory is Cleaned" << endl;
+    }
 };
 
 int main()
@@ -45,7 +48,7 @@ int main()
     int n;
     cout << "Enter The Number Of Diamond Companies you want to add: ";
     cin >> n;
-    DiamondCompany companies[n];
+    DiamondCompany* companies[n];
     int id, staff, revenue, imports, exports;
     char name[100], ceo[100];
     for (int i = 0; i < n; i++)
@@ -67,12 +70,12 @@ int main()
         cout << "Enter Company CEO Name: " << endl;
         cin >> ceo;
 
-        companies[i] = DiamondCompany(id, name, staff, revenue, imports, exports, ceo);
+        companies[i] = new DiamondCompany(id, name, staff, revenue, imports, exports, ceo);
     }
-    cout << "Companies Details Are:" << endl;
+    cout << "Companies Details Are:" << endl << endl;
     for (int i = 0; i < n; i++)
     {
-        companies[i].displayDiamondCompany();
+        companies[i]->displayDiamondCompany();
         cout << endl << endl;
     }
     return 0;
