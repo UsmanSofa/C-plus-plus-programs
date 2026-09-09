@@ -69,10 +69,13 @@ int main()
         cin >> staff;
         cafes[i] = new Cafe(id, name, type, rating, location, year, staff);
     }
-    cout << "Cafe Details are: " << endl << endl;
-    for (int i = 0;i<n;i++){
+    cout << "Cafe Details are: " << endl
+         << endl;
+    for (int i = 0; i < n; i++)
+    {
         cafes[i]->getCafeData();
-        cout << endl << endl;
+        cout << endl
+             << endl;
     }
     return 0;
 }
