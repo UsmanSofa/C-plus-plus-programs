@@ -18,6 +18,7 @@ public:
     {
         cout << "Default Constructor" << endl;
     }
+
     DiamondCompany(int i, char n[], int s, int r, int im, int ex, char c[])
     {
         this->comp_id = i;
@@ -28,6 +29,7 @@ public:
         this->comp_export_diamonds = ex;
         strcpy(this->comp_ceo, c);
     }
+
     void displayDiamondCompany()
     {
         cout << "Company ID: " << comp_id << endl
@@ -35,10 +37,12 @@ public:
              << "Company Staff Quantity: " << comp_staff_quantity << endl
              << "Company Revenue: " << comp_revenue << endl
              << "Company Import Diamonds: " << comp_import_raw_diamonds << endl
-             << "Compnay Exports Diamond: " << comp_export_diamonds << endl
+             << "Company Export Diamond: " << comp_export_diamonds << endl
              << "Company CEO Name: " << comp_ceo << endl;
     }
-    ~DiamondCompany(){
+
+    ~DiamondCompany()
+    {
         cout << "Memory is Cleaned" << endl;
     }
 };
@@ -46,37 +50,50 @@ public:
 int main()
 {
     int n;
+
     cout << "Enter The Number Of Diamond Companies you want to add: ";
     cin >> n;
-    DiamondCompany* companies[n];
+
+    DiamondCompany companies[n];
+
     int id, staff, revenue, imports, exports;
     char name[100], ceo[100];
+
     for (int i = 0; i < n; i++)
     {
-        cout << "Enter Company Details: " << endl;
+        cout << "\nEnter Company Details: " << endl;
 
-        cout << "Enter Company ID: " << endl;
+        cout << "Enter Company ID: ";
         cin >> id;
-        cout << "Enter Company Name: " << endl;
+
+        cout << "Enter Company Name: ";
         cin >> name;
-        cout << "Enter Company Staff Quantity: " << endl;
+
+        cout << "Enter Company Staff Quantity: ";
         cin >> staff;
-        cout << "Enter Company Revenue: " << endl;
+
+        cout << "Enter Company Revenue: ";
         cin >> revenue;
-        cout << "Enter Company Import: " << endl;
+
+        cout << "Enter Company Import: ";
         cin >> imports;
-        cout << "Enter Company Export: " << endl;
+
+        cout << "Enter Company Export: ";
         cin >> exports;
-        cout << "Enter Company CEO Name: " << endl;
+
+        cout << "Enter Company CEO Name: ";
         cin >> ceo;
 
-        companies[i] = new DiamondCompany(id, name, staff, revenue, imports, exports, ceo);
+        companies[i] = DiamondCompany(id, name, staff, revenue, imports, exports, ceo);
     }
-    cout << "Companies Details Are:" << endl << endl;
+
+    cout << "\nCompanies Details Are:\n" << endl;
+
     for (int i = 0; i < n; i++)
     {
-        companies[i]->displayDiamondCompany();
-        cout << endl << endl;
+        companies[i].displayDiamondCompany();
+        cout << endl;
     }
+
     return 0;
 }

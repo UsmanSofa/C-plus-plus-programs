@@ -45,7 +45,7 @@ int main()
     int n;
     cout << "Enter The Number Of Cafe You Want to add: " << endl;
     cin >> n;
-    Cafe *cafes[n];
+    Cafe cafes[n];
     int id, year, staff;
     char name[100], type[30], rating[15], location[30];
     for (int i = 0; i < n; i++)
@@ -67,13 +67,13 @@ int main()
         cin >> year;
         cout << "Enter Cafe Staff Quantity: " << endl;
         cin >> staff;
-        cafes[i] = new Cafe(id, name, type, rating, location, year, staff);
+        cafes[i] = Cafe(id, name, type, rating, location, year, staff);
     }
     cout << "Cafe Details are: " << endl
          << endl;
     for (int i = 0; i < n; i++)
     {
-        cafes[i]->getCafeData();
+        cafes[i].getCafeData();
         cout << endl
              << endl;
     }
